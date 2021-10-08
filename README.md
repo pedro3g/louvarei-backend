@@ -9,7 +9,7 @@ O diferencial do Louvarei será a possibilidade dos membros incluirem/cifrar/cor
 
 ### Como usar?
 O plataforma está em *Beta* e com funcionalidades restritas a membros com autorização para modificar.
-> Esse repositório trata-se do servidor da plataforma
+> Esse repositório trata-se do servidor da plataforma.
 > [Clique aqui](https://github.com/maranata-oss/louvarei-frontend) para acessar o repositório da plataforma.
 
 ## Para desenvolvedores:
