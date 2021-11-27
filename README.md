@@ -46,7 +46,7 @@ Alterando o parâmetro POSTGRES_PASSWORD para a senha desejada.
 
 `.env`
 ```
-DATABASE_URL="postgresql://porstgres:krelod@localhost:5432/mydb?schema=public"
+DATABASE_URL="postgresql://porstgres:mysecretpassword@localhost:5432/mydb?schema=public"
 NODE_ENV=development
 ```
 
