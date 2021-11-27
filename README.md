@@ -39,15 +39,22 @@ Após a instalação das dependências, será necessário iniciar o Postgresql.
 #### Instalação do Postgresql usando docker
 A instalação do Postgresql usando Docker é bem simples, basta ter o Docker instalado e iniciado para poder usar o comando no terminal:
 ```
-$ docker run --name some-postgres -e POSTGRES_PASSWORD=mysecretpassword -d postgres
+$ docker run --name pg -p 5432:5432 -e POSTGRES_PASSWORD=docker -d -t postgres
 ```
 Alterando o parâmetro POSTGRES_PASSWORD para a senha desejada.
 > O arquivo `.env` não será incluída nos commits do git sendo necessário que o desenvolvedor crie seu próprio arquivo seguindo o modelo abaixo e substituindo os campos:
 
 `.env`
 ```
-DATABASE_URL="postgresql://porstgres:krelod@localhost:5432/mydb?schema=public"
 NODE_ENV=development
+DATABASE_URL="postgresql://postgres:docker@localhost:5432/louvarei?schema=public"
+
+# Preencha os campos abaixos utilizando as credenciais do servidor de email SMTP. Recomendamos o uso do Mailtrap
+SMTP=smtp.mailtrap.io
+SMTP_PORT=2525
+SMTP_USER=
+SMTP_PASS=
+
 ```
 
 #### Iniciando o servidor

@@ -4,6 +4,19 @@
     "outDir": "dist",
     "strict": true,
     "lib": ["esnext"],
-    "esModuleInterop": true
-  }
+    "esModuleInterop": true,
+    "allowJs": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "baseUrl": "src",
+    "paths": {
+      "@repositories/*": ["repositories/*"],
+      "@entities/*": ["entities/*"],
+      "@providers/*": ["providers/*"],
+      "@useCases/*": ["useCases/*"]
+    }
+  },
+  "include": [
+    "src/**/*.ts"
+  ]
 }
