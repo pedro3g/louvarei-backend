@@ -1,7 +1,6 @@
-import { generateToken } from '@utils/jwt'
+import { Token } from '@utils/Token'
 import { Request, Response } from 'express'
 import { UserAuthenticateUseCase } from './UserAuthenticateUseCase'
-
 export class UserAuthenticateController {
   constructor(private userAuthenticateUseCase: UserAuthenticateUseCase) {}
 
@@ -22,7 +21,7 @@ export class UserAuthenticateController {
 
       return res.json({
         message: 'Usuário validado',
-        token: generateToken({ id: user.id }),
+        token: new Token().create({ id: user.id }),
       })
     } catch (err) {
       return res.status(400).json({
