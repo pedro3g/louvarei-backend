@@ -70,7 +70,7 @@ $ pnpm dev
 ### Evite Overengineering
 Sim, gostamos de uma arquitetura limpa, mas não somos fissurados em manter uma arquiterua forte, apenas seguimos um padrão que seja fácil de revisar e manter.
 
-### Confira que o seu código estará de acordo com o nosso styleguide
+### Confira se o seu código estará de acordo com o nosso styleguide
 Para poder garantir que está de acordo, rode o comando abaixo responsável por formatar o código:
 ```
 $ yarn lint
