@@ -1,4 +1,5 @@
 import { v4 } from 'uuid'
+import { hashSync } from 'bcrypt'
 
 export class User {
   public readonly id: string
@@ -10,7 +11,7 @@ export class User {
   constructor(props: Omit<User, 'id'>, id?: string) {
     this.name = props.name
     this.email = props.email
-    this.password = props.password
+    this.password = hashSync(props.password, 10)
 
     if (!id) {
       this.id = v4()

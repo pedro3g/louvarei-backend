@@ -32,5 +32,7 @@ export class CreateUserUseCase {
       subject: 'Seja bem vindo a plataforma Louvarei',
       body: '<p>Você já pode fazer login na nossa plataforma.</p>',
     })
+
+    return user
   }
 }

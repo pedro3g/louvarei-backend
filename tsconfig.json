@@ -13,7 +13,8 @@
       "@repositories/*": ["repositories/*"],
       "@entities/*": ["entities/*"],
       "@providers/*": ["providers/*"],
-      "@useCases/*": ["useCases/*"]
+      "@useCases/*": ["useCases/*"],
+      "@utils/*": ["utils/*"]
     }
   },
   "include": [
