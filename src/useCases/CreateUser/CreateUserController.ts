@@ -1,4 +1,4 @@
-import { generateToken } from '@utils/jwt'
+import { Token } from '@utils/Token'
 import { Request, Response } from 'express'
 import { CreateUserUseCase } from './CreateUserUseCase'
 
@@ -23,7 +23,7 @@ export class CreateUserController {
 
       return res.json({
         message: 'Usuário registrado com sucesso!',
-        token: generateToken({ id: user.id }),
+        token: new Token().create({ id: user.id }),
       })
     } catch (err) {
       return res.status(400).json({
