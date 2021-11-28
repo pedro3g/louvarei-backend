@@ -8,6 +8,7 @@ declare global {
       SMTP_PORT: string
       SMTP_USER: string
       SMTP_PASS: string
+      JWT_KEY: string
     }
   }
 }

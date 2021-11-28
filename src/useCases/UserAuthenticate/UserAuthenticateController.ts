@@ -1,28 +1,27 @@
 import { generateToken } from '@utils/jwt'
 import { Request, Response } from 'express'
-import { CreateUserUseCase } from './CreateUserUseCase'
+import { UserAuthenticateUseCase } from './UserAuthenticateUseCase'
 
-export class CreateUserController {
-  constructor(private createUserUseCase: CreateUserUseCase) {}
+export class UserAuthenticateController {
+  constructor(private userAuthenticateUseCase: UserAuthenticateUseCase) {}
 
   async handle(req: Request, res: Response): Promise<Response> {
-    const { name, email, password } = req.body
+    const { email, password } = req.body
 
     try {
-      if (!name || !email || !password) {
+      if (!email || !password) {
         throw new Error(
           'Existem campos obrigatórios que não foram preenchidos.'
         )
       }
 
-      const user = await this.createUserUseCase.execute({
-        name,
+      const user = await this.userAuthenticateUseCase.execute({
         email,
         password,
       })
 
       return res.json({
-        message: 'Usuário registrado com sucesso!',
+        message: 'Usuário validado',
         token: generateToken({ id: user.id }),
       })
     } catch (err) {
